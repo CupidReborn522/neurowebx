@@ -1,25 +1,25 @@
-/* Variables CSS para Temas de Color - Simplificado a Claro y Oscuro */
-:root {
+ /* Variables CSS para Temas de Color - Simplificado a Claro y Oscuro */
+ :root {
     --color-primary: #007bff; /* Azul */
     --color-secondary: #28a745; /* Verde */
     --color-accent: #fd7e14; /* Naranja */
 
     --font-family-primary: sans-serif;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-}
 
 /* Tema Claro (Default) */
 body {
-    
     font-family: var(--font-family-primary);
     background-color: #f8f9fa; /* bg-light */
     color: #343a40; /* text-light */
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de tema */
+}
+
+*{
+    margin:0;
+    box-sizing: border-box;
 }
 
 /* Tema Oscuro */
@@ -30,7 +30,6 @@ body.dark-theme {
 
 /* Estilos Generales */
 header {
-    position: relative;
     background-color: inherit; /* Hereda el color de fondo del body para tema consistente */
     padding: 20px;
     display: flex;
@@ -48,44 +47,72 @@ header .logo {
     font-size: 1.5em;
     font-weight: bold;
     color: var(--color-primary);
+    text-decoration: none; /* Eliminar subrayado del logo-link */
 }
 
-nav ul {
-    position: relative;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav li {
-    margin-left: 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: inherit; /* Hereda el color del texto del body para tema consistente */
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--color-primary);
-}
-
-#theme-toggle {
-    padding: 10px 15px;
+.navbar-toggler {
     background-color: var(--color-primary);
     color: white;
     border: none;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    justify-self: center;
+    font-size: 1em;
+    display: none; /* Oculto por defecto en escritorio */
+    position: fixed;
+    top: 2px;
+    right: 2px;
+
 }
 
-#theme-toggle:hover {
-    background-color: #0056b3; /* Un azul más oscuro al hacer hover */
+.navbar-toggler:hover {
+    background-color: #0056b3;
 }
+
+.navbar-collapse {
+    display: flex; /* Para menu horizontal en escritorio */
+    justify-content: flex-end; /* Alinear menu a la derecha en escritorio */
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para menu horizontal en escritorio */
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+     display: block; /* Asegurar que ocupe todo el ancho del li en movil */
+     background: none; /* Fondo transparente por defecto */
+     border: none; /* Eliminar borde por defecto en movil */
+     cursor: pointer; /* Cursor de botón */
+     text-align: center; /* Centrar texto en movil */
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: var(--color-primary);
+}
+
+
+/* Sticky Navbar */
+.sticky-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
 
 #hero {
     background-color: inherit; /* Hereda color de fondo */
@@ -195,17 +222,17 @@ body.dark-theme .service {
     height: auto; /* Ajusta la altura si lo deseas */
 }
 /* Para mostrar imágenes en el carrusel, podrías descomentar y ajustar esto: */
-
+/*
 #carousel-section .carousel-item img {
     width: 100%;
     height: auto;
     display: block;
 }
-
+*/
 /* Placeholder para los items del carrusel (mientras no se usan imágenes) */
 #carousel-section .carousel-item {
     background-color: #eee; /* Un gris claro como placeholder */
-    min-height: 400px; /* Altura de ejemplo, ajústala */
+    height: 300px; /* Altura de ejemplo, ajústala */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -427,10 +454,9 @@ body.dark-theme .navbar {
     }
 
     .navbar-toggler {
-        position: absolute;
-        top:10px;
-        right:10px;
         display: block; /* Mostrar botón en móviles */
+        margin-left: auto; /* Botón a la derecha en móvil */
+        
     }
 
     .navbar-collapse {
@@ -487,6 +513,8 @@ body.dark-theme .navbar {
         text-align: center;
     }
 
+    
+
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -538,4 +566,37 @@ body.dark-theme .navbar {
     .contact-form {
         max-width: 95%; /* El formulario ocupa más ancho en móviles */
     }
+}
+
+/* Estilos para el botón de tema - Nuevos estilos con borde */
+#theme-toggle {
+    padding: 10px 10px;
+    font-size: 20px;
+    /* Eliminamos el background-color y color base, los definiremos en las clases */
+    border: 2px solid transparent; /* Borde transparente por defecto para la transición */
+    border-radius: 10px;
+    cursor: pointer;
+    justify-self: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transición para el borde también */
+}
+
+/* Estilo para el botón en modo oscuro (fondo negro, borde blanco) */
+#theme-toggle.theme-toggle-dark-style {
+    background-color: black;
+    color: white;
+    border-color: #777;
+}
+
+/* Estilo para el botón en modo claro (fondo blanco, borde negro) */
+#theme-toggle.theme-toggle-light-style {
+    background-color: white;
+    color: black;
+    border-color: #777;
+}
+
+#theme-toggle:hover {
+    /* Mantenemos el hover original, pero ajustamos para que herede el color de texto actual */
+    background-color: #777; /* Un azul más oscuro al hacer hover 
+    color: white; /* Aseguramos que el texto sea blanco al hacer hover */
+      
 }

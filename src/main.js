@@ -12,23 +12,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body.classList.contains('dark-theme')) {
             themeToggle.innerHTML = '☀️'; // Cambiar icono a Sol
             themeToggle.title = 'Cambiar a modo claro'; // Cambiar tooltip a "Modo Claro"
+            themeToggle.classList.remove('theme-toggle-light-style'); // Remover clase de estilo claro
+            themeToggle.classList.add('theme-toggle-dark-style'); // Añadir clase de estilo oscuro
         } else {
             themeToggle.innerHTML = '🌙'; // Cambiar icono a Luna
             themeToggle.title = 'Cambiar a modo oscuro'; // Cambiar tooltip a "Modo Oscuro"
+            themeToggle.classList.remove('theme-toggle-dark-style'); // Remover clase de estilo oscuro
+            themeToggle.classList.add('theme-toggle-light-style'); // Añadir clase de estilo claro
         }
     });
 
-    // Inicializar el icono y tooltip del botón de tema al cargar la página
+    // Inicializar el icono, tooltip y estilo del botón de tema al cargar la página
     if (body.classList.contains('dark-theme')) {
         themeToggle.innerHTML = '☀️'; // Icono Sol si tema oscuro al inicio
         themeToggle.title = 'Cambiar a modo claro'; // Tooltip "Modo Claro"
+        themeToggle.classList.add('theme-toggle-dark-style'); // Añadir clase de estilo oscuro
     } else {
         themeToggle.innerHTML = '🌙'; // Icono Luna si tema claro al inicio
         themeToggle.title = 'Cambiar a modo oscuro'; // Tooltip "Modo Oscuro"
+        themeToggle.classList.add('theme-toggle-light-style'); // Añadir clase de estilo claro
     }
 
 
-    // --- NUEVO CÓDIGO PARA NAVBAR TOGGLE (sin cambios) ---
+    // --- NUEVO CÓDIGO PARA NAVBAR TOGGLE ---
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Carrusel de imágenes (sin cambios)
+    // Carrusel de imágenes
     if (carousel && prevButton && nextButton) {
         nextButton.addEventListener('click', () => {
             carouselIndex++;

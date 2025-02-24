@@ -1,96 +1,541 @@
+/* Variables CSS para Temas de Color - Simplificado a Claro y Oscuro */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --color-primary: #007bff; /* Azul */
+    --color-secondary: #28a745; /* Verde */
+    --color-accent: #fd7e14; /* Naranja */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --font-family-primary: sans-serif;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Tema Claro (Default) */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    
+    font-family: var(--font-family-primary);
+    background-color: #f8f9fa; /* bg-light */
+    color: #343a40; /* text-light */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de tema */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Tema Oscuro */
+body.dark-theme {
+    background-color: #343a40; /* bg-dark */
+    color: #f8f9fa; /* text-dark */
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Estilos Generales */
+header {
+    position: relative;
+    background-color: inherit; /* Hereda el color de fondo del body para tema consistente */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Mantener borde claro incluso en tema oscuro */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+body.dark-theme header {
+    border-bottom: 1px solid #555; /* Borde más visible en tema oscuro */
 }
 
-.card {
-  padding: 2em;
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-primary);
 }
 
-.read-the-docs {
-  color: #888;
+nav ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+nav li {
+    margin-left: 10px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+nav a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto del body para tema consistente */
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+#theme-toggle {
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-self: center;
+}
+
+#theme-toggle:hover {
+    background-color: #0056b3; /* Un azul más oscuro al hacer hover */
+}
+
+#hero {
+    background-color: inherit; /* Hereda color de fondo */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+#hero p {
+    font-size: 1.2em;
+    color: inherit; /* Hereda color de texto */
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--color-secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #198754; /* Un verde más oscuro al hacer hover */
+}
+
+
+#servicios, #nosotros, #carousel-section, #contacto {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#servicios h2, #nosotros h2, #carousel-section h2, #contacto h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service {
+    padding: 30px;
+    background-color: inherit; /* Hereda color de fondo */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+body.dark-theme .service {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara en tema oscuro */
+}
+
+
+.service-icon {
+    font-size: 3em;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.service p {
+    color: inherit; /* Hereda color de texto */
+    line-height: 1.6;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    color: inherit; /* Hereda color de texto */
+    line-height: 1.7;
+}
+
+
+/* Carrusel de Imágenes */
+#carousel-section .carousel-container {
+    position: relative;
+    max-width: 800px; /* Ajusta el ancho máximo según necesites */
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#carousel-section .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+#carousel-section .carousel-item {
+    min-width: 100%; /* Cada item ocupa el 100% del contenedor */
+    height: auto; /* Ajusta la altura si lo deseas */
+}
+/* Para mostrar imágenes en el carrusel, podrías descomentar y ajustar esto: */
+/*
+#carousel-section .carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+*/
+/* Placeholder para los items del carrusel (mientras no se usan imágenes) */
+#carousel-section .carousel-item {
+    background-color: #eee; /* Un gris claro como placeholder */
+    height: 300px; /* Altura de ejemplo, ajústala */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #aaa; /* Gris más oscuro para el texto placeholder */
+}
+
+body.dark-theme #carousel-section .carousel-item {
+    background-color: #555; /* Placeholder más oscuro en tema oscuro */
+    color: #ccc; /* Texto placeholder más claro en tema oscuro */
+}
+
+
+#carousel-section button.carousel-prev,
+#carousel-section button.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#carousel-section button.carousel-prev:hover,
+#carousel-section button.carousel-next:hover {
+    opacity: 1;
+}
+
+#carousel-section button.carousel-prev {
+    left: 10px;
+}
+
+#carousel-section button.carousel-next {
+    right: 10px;
+}
+
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form p {
+    color: inherit; /* Hereda color de texto */
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit; /* Para heredar la fuente del body */
+    background-color: inherit; /* Hereda color de fondo */
+    color: inherit; /* Hereda color de texto */
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    border: 1px solid #777; /* Borde más claro en tema oscuro */
+}
+
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente el textarea */
+    min-height: 150px;
+}
+
+
+.contact-form button[type="submit"] {
+    padding: 15px 30px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Un azul más oscuro al hacer hover */
+}
+
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #157347; /* Un verde más oscuro al hacer hover */
+}
+
+
+footer {
+    background-color: inherit; /* Hereda color de fondo */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee; /* Mantener borde claro */
+    color: inherit; /* Hereda color de texto */
+}
+
+body.dark-theme footer {
+    border-top: 1px solid #555; /* Borde más visible en tema oscuro */
+}
+
+
+/* Estilos para la Barra de Navegación */
+.navbar {
+    background-color: inherit; /* Hereda el color de fondo del header */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: relative; /* Para posicionamiento absoluto del menu desplegable */
+}
+
+body.dark-theme .navbar {
+    border-bottom: 1px solid #555;
+}
+
+.navbar-brand .logo-link {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none; /* Eliminar subrayado del logo-link */
+}
+
+.navbar-toggler {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: none; /* Oculto por defecto en escritorio */
+}
+
+.navbar-toggler:hover {
+    background-color: #0056b3;
+}
+
+.navbar-collapse {
+    display: flex; /* Para menu horizontal en escritorio */
+    justify-content: flex-end; /* Alinear menu a la derecha en escritorio */
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para menu horizontal en escritorio */
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+     display: block; /* Asegurar que ocupe todo el ancho del li en movil */
+     background: none; /* Fondo transparente por defecto */
+     border: none; /* Eliminar borde por defecto en movil */
+     cursor: pointer; /* Cursor de botón */
+     text-align: center; /* Centrar texto en movil */
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: var(--color-primary);
+}
+
+
+/* Sticky Navbar */
+.sticky-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+
+/* Media query para móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Alineación vertical en móviles */
+        align-items: stretch; /* Items ocupan todo el ancho en móvil */
+    }
+
+    .navbar-brand {
+        text-align: left; /* Logo a la izquierda en móvil */
+        width: 100%; /* Ancho completo en móvil */
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        top:10px;
+        right:10px;
+        display: block; /* Mostrar botón en móviles */
+    }
+
+    .navbar-collapse {
+        display: none; /* Ocultar menú inicialmente en móvil */
+        flex-direction: column; /* Menu vertical en móvil */
+        width: 100%; /* Ancho completo en móvil */
+        position: absolute; /* Posicionar menu desplegable */
+        top: 100%; /* Debajo de la barra de navegación */
+        left: 0;
+        background-color: inherit; /* Fondo igual al header */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra sutil al desplegar */
+    }
+
+    body.dark-theme .navbar-collapse {
+         box-shadow: 0 4px 6px rgba(255,255,255,0.1); /* Sombra clara en tema oscuro */
+    }
+
+
+    .navbar-collapse.show {
+        display: flex; /* Mostrar menu al añadir clase 'show' */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Items de menu en columna en móvil */
+        width: 100%; /* Ancho completo para items de menu en móvil */
+    }
+
+    .nav-item {
+        margin-left: 0; /* Eliminar margen izquierdo en móvil */
+        width: 100%; /* Ancho completo para items de menu en móvil */
+    }
+
+    .nav-link {
+        text-align: left; /* Alinear texto a la izquierda en menu desplegable */
+        border-bottom: 1px solid #eee; /* Separador entre items en menu desplegable */
+    }
+
+    body.dark-theme .nav-link {
+         border-bottom: 1px solid #555; /* Separador en tema oscuro */
+    }
+
+    .nav-item:last-child .nav-link {
+        border-bottom: none; /* Eliminar borde inferior del ultimo item */
+    }
+}
+
+
+/* Estilos Responsivos (Media Queries) */
+
+/* Para pantallas más pequeñas que 768px (móviles) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 80px 20px; /* Reduce el padding vertical en móviles */
+    }
+
+    #hero h1 {
+        font-size: 2em; /* Reduce el tamaño del título en móviles */
+    }
+
+    #hero p {
+        font-size: 1em; /* Reduce el tamaño del párrafo en móviles */
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .service {
+        padding: 20px; /* Reduce el padding interno de los servicios en móviles */
+    }
+
+    #servicios, #nosotros, #carousel-section, #contacto {
+        padding: 60px 20px; /* Reduce el padding vertical de las secciones en móviles */
+    }
+
+    #servicios h2, #nosotros h2, #carousel-section h2, #contacto h2 {
+        font-size: 1.7em; /* Reduce el tamaño de los títulos de sección en móviles */
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        text-align: left; /* Justificar a la izquierda en móviles puede ser más legible */
+    }
+
+    #carousel-section .carousel-item {
+        height: 200px; /* Altura del carrusel más pequeña en móviles */
+        font-size: 1.5em; /* Fuente más pequeña para el placeholder del carrusel en móviles */
+    }
+
+    .contact-form {
+        max-width: 95%; /* El formulario ocupa más ancho en móviles */
+    }
 }

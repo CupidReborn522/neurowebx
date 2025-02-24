@@ -1,13 +1,117 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurowebx - Creación de Páginas Web Impactantes | Diseño Web Profesional</title>
+    <meta name="description" content="Neurowebx: Expertos en creación de páginas web profesionales y diseño web a medida. Impulsa tu negocio online con nuestros servicios de desarrollo web, tiendas online y mantenimiento web.">
+    <meta name="keywords" content="creación páginas web, diseño web, desarrollo web, tiendas online, ecommerce, mantenimiento web, diseño web responsive, Neurowebx">
+    <meta name="author" content="Neurowebx">
+    <link rel="canonical" href="https://www.tunegocioweb.com/"> <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar sticky-top">
+        <div class="navbar-brand">
+            <a class="logo-link" href="/">Neurowebx</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">☰</span>
+        </button>
+        <nav class="navbar-collapse collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="nav-link">Modo Oscuro</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Creamos Páginas Web Impactantes y Funcionales</h1>
+            <p>Impulsa tu negocio con una presencia online profesional y moderna.  Diseño web a medida para tus necesidades.</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service">
+                <div class="service-icon">[Image of Icono Diseño Web Personalizado - alt="Icono de diseño web personalizado"]</div>
+                <h3>Diseño Web Personalizado</h3>
+                <p>Sitios web únicos y a medida para reflejar tu identidad de marca.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">[Image of Icono Desarrollo Web Responsive - alt="Icono de desarrollo web responsive"]</div>
+                <h3>Desarrollo Web Responsive</h3>
+                <p>Sitios web que se ven perfectos en cualquier dispositivo.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">[Image of Icono Tiendas Online - alt="Icono de tiendas online"]</div>
+                <h3>Tiendas Online (Ecommerce)</h3>
+                <p>Plataformas de venta online para expandir tu negocio.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon">[Image of Icono Mantenimiento Web - alt="Icono de mantenimiento web"]</div>
+                <h3>Mantenimiento y Actualización</h3>
+                <p>Mantén tu web siempre segura y al día.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2>Acerca de Neurowebx</h2>
+        <div class="about-content">
+            <p>Somos un equipo apasionado por la creación de experiencias web excepcionales.  En Neurowebx, combinamos diseño creativo y desarrollo técnico para ofrecer soluciones web que impulsan el éxito de nuestros clientes.  Nos enfocamos en la innovación, la calidad y la satisfacción del cliente.</p>
+        </div>
+    </section>
+
+    <section id="carousel-section">
+        <h2>Nuestros Trabajos</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">[Image of Ejemplo Diseño Web 1 - alt="Ejemplo de diseño web 1"]</div>
+                <div class="carousel-item">[Image of Ejemplo Diseño Web 2 - alt="Ejemplo de diseño web 2"]</div>
+                <div class="carousel-item">[Image of Ejemplo Diseño Web 3 - alt="Ejemplo de diseño web 3"]</div>
+            </div>
+            <button class="carousel-prev" aria-label="Anterior">❮</button>
+            <button class="carousel-next" aria-label="Siguiente">❯</button>
+        </div>
+    </section>
+
+
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <div class="contact-form">
+            <p>¿Listo para empezar tu proyecto web?  ¡Escríbenos!</p>
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Tu Nombre" required aria-label="Tu Nombre">
+                <input type="email" name="email" placeholder="Tu Email" required aria-label="Tu Email">
+                <textarea name="mensaje" placeholder="Tu Mensaje" required aria-label="Tu Mensaje"></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:neurowebx@gmail.com">neurowebx@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Neurowebx. Todos los derechos reservados.</p>
+    </footer>
+
+<script src="/src/main.js"></script>
+</body>
 </html>

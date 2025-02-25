@@ -159,19 +159,71 @@ header .logo {
     color: var(--color-primary);
 }
 
-.services-grid {
+/* .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 20px;
     margin-top: 20px;
+} */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 750px;
+    margin: auto;
+}
+
+@media screen and ( min-width: 620px ) {
+
+    .services-grid {
+flex-direction: row;
+gap: 25px;
+    }
+
+    
+}
+
+@media screen and ( min-width: 1575px ) {
+
+    .services-grid {
+max-width: none;
+    }
+
+    
+}
+
+@media screen and ( min-width: 1200px ) {
+
+    .services-grid {
+gap:45px;
+    }
+
+    
 }
 
 .service {
     padding: 30px;
     background-color: inherit; /* Hereda color de fondo */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    width: 100%;
+    min-height: 454px;    
 }
+
+
+@media screen and ( min-width: 766px ) {
+
+.service {
+    
+    max-width: 350px;
+}
+    
+}
+
 
 body.dark-theme .service {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara en tema oscuro */
@@ -181,7 +233,13 @@ body.dark-theme .service {
 .service-icon {
     font-size: 3em;
     color: var(--color-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+.service-icon img{
+    width: 100%;
+    max-width: 350px;
+    /* height: 200px; */
 }
 
 .service h3 {

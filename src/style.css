@@ -116,7 +116,6 @@ header .logo {
 
 #hero {
     background-color: inherit; /* Hereda color de fondo */
-    padding: 100px 20px;
     text-align: center;
 }
 
@@ -131,6 +130,15 @@ header .logo {
     color: inherit; /* Hereda color de texto */
     margin-bottom: 30px;
 }
+.hero-content{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #777;
+
+}
+
 
 .cta-button {
     display: inline-block;
@@ -584,7 +592,7 @@ body.dark-theme .navbar {
     }
 
     #hero {
-        padding: 80px 20px; /* Reduce el padding vertical en móviles */
+        padding: 80px 0; /* Reduce el padding vertical en móviles */
     }
 
     #hero h1 {

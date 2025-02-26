@@ -8,6 +8,10 @@
     <meta name="keywords" content="creación páginas web, diseño web, desarrollo web, tiendas online, ecommerce, mantenimiento web, diseño web responsive, Neurowebx">
     <meta name="author" content="Neurowebx">
     <link rel="canonical" href="https://www.tunegocioweb.com/"> <link rel="stylesheet" href="/src/style.css">
+    <!-- styles -->
+     <!-- AOS (To scroll animation) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,16 +44,16 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Creamos Páginas Web Impactantes y Funcionales</h1>
-            <p>Impulsa tu negocio con una presencia online profesional y moderna.  Diseño web a medida para tus necesidades.</p>
-            <a href="#contacto" class="cta-button">Contáctanos</a>
+            <h1 data-aos="zoom-in">Creamos Páginas Web Impactantes y Funcionales</h1>
+            <p data-aos="zoom-in">Impulsa tu negocio con una presencia online profesional y moderna.  Diseño web a medida para tus necesidades.</p>
+            <a data-aos="fade-down" href="#contacto" class="cta-button">Contáctanos</a>
         </div>
     </section>
 
-    <section id="servicios">
+    <section id="servicios" data-aos="fade-down">
         <h2>Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="flip-container">
+        <div class="services-grid" >
+            <div class="flip-container" data-aos="fade-left">
                 <div class="card">
                     <div class="service front">
                         <div class="service-icon"><img src="/public/images/diseño_web_personalizado_500.webp" alt="Diseño web personalizado"></div>
@@ -63,7 +67,7 @@
                 </div>
               </div> 
 
-              <div class="flip-container">
+              <div class="flip-container" data-aos="fade-left">
                 <div class="card">
                     <div class="service front">
                         <div class="service-icon"><img src="/public/images/desarrollo_web_responsive_500.webp" alt="Desarrollo web responsive"></div>
@@ -77,7 +81,7 @@
                     </div>
                 </div>
               </div> 
-              <div class="flip-container">
+              <div class="flip-container" data-aos="fade-left">
                 <div class="card">
                     <div class="service front">
                         <div class="service-icon"><img src="/public/images/tiendas_online_500.webp" alt="Tiendas online"></div>
@@ -91,7 +95,7 @@
                     </div>
                 </div>
               </div> 
-              <div class="flip-container">
+              <div class="flip-container" data-aos="fade-left">
                 <div class="card">
                     <div class="service front">
                         <div class="service-icon"><img src="/public/images/mantenimineto_y_actualizacion_500.webp" alt="Mantenimiento y actualización"></div>
@@ -110,7 +114,7 @@
         </div>
     </section>
 
-    <section id="nosotros">
+    <section id="nosotros" data-aos="zoom-in">
         <h2>Acerca de Neurowebx</h2>
         <div class="about-content">
             <p>Somos un equipo apasionado por la creación de experiencias web excepcionales.  En Neurowebx, combinamos diseño creativo y desarrollo técnico para ofrecer soluciones web que impulsan el éxito de nuestros clientes.  Nos enfocamos en la innovación, la calidad y la satisfacción del cliente.</p>
@@ -131,7 +135,7 @@
     </section>
 
 
-    <section id="contacto">
+    <section id="contacto" data-aos="fade-down">
         <h2>Contáctanos</h2>
         <div class="contact-form">
             <p>¿Listo para empezar tu proyecto web?  ¡Escríbenos!</p>
@@ -150,9 +154,12 @@
     <footer>
         <p>© 2023 Neurowebx. Todos los derechos reservados.</p>
     </footer>
-
-<script type="module" src="/src/main.js">
-  
+<!-- scripts -->
+ <!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="/src/main.js"></script>
+<script>
+    AOS.init();
 </script>
 </body>
 </html>
